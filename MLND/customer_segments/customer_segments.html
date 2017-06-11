@@ -12148,7 +12148,7 @@ From the example i chose, we can see that there's significant difference between
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong><br>
-I choose <em>Fresh</em> feature to predict. Sadly, it failed, its R2 is negative. It suggested this feature is not necessary for identifying customers' spending habits.</p>
+I choose <em>Fresh</em> feature to predict. Its R2 is negative suggested that the values of that feature cannot be predicted by the other features in the dataset and therefore, the feature is not redundant and may contain useful information not contained in the other features. That may suggest Fresh is an important feature for customer's purchasing because it cannot be predicted by other feature.</p>
 
 </div>
 </div>
@@ -17926,7 +17926,7 @@ dtype: int64
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong><br>
-Yes, there's some data points considered outlier for more than one feature. 65,66,75,128,154 has more than one feature consider it to be the outlier.</p>
+Yes, there's some data points considered outlier for more than one feature. 65,66,75,128,154 has more than one feature consider it to be the outlier. Removed these outliers could have great impact on our following cluster bacause the outlier may influence the centroid resulting in failure of found the right clustering.</p>
 
 </div>
 </div>
@@ -19705,10 +19705,10 @@ AAAAJIYgEwAAAACQGIJMAAAAAEBi/n80Q1POTTUNgQAAAABJRU5ErkJggg==
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
 <p><strong>Kmeans</strong><br>
-Kmeans assume there's no-spheric in the structure of data. Quick to use, easy scaling with number of samples. When the convariance equal to zero, it's the same as GMM. But it can easy comes to the local minimum. That's a hard clustering.</p>
+Kmeans assume there's no-spheric in the structure of data. Quick to use, easy scaling with number of samples. When the convariance equal to zero, it's the same as GMM. But it can easy comes to the local minimum. Kmeans uses hard assignment.</p>
 <p><strong>GMM</strong>
 Advantages:<br>
-Could catch the latent structure in the data. But more complex than kmeans. It can failed when the dimension is too high and have high computational reasons. That's a soft clustering.</p>
+Could catch the latent structure in the data. But more complex than kmeans. It can failed when the dimension is too high and have high computational reasons. It take variance into account and uses soft assignment.</p>
 <p>The analysis before shows there's some structure in data and the data size is not very huge. So using GMM could catch the latent structure in it.</p>
 
 </div>
@@ -20838,7 +20838,7 @@ Compare the sample to the centroids, Sample 0 have great spent on Milk, Grocery 
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong><br>
-We do A/B test only on the customers that react positively. This segment can't represent the whole customer segments. We can choose a small group of people among all our segment to apply the change. We should choose a well-defined metrics, unit of diversion and unit of control. At last, we shall use statistical inference to see whether our change is significant.</p>
+We cannot assume the change affects all customers equally because there're different kinds of segments between them. We could analysis each segment of customer to find the ones react positively. And do A/B test between each segment. We could use customer spent to quantize. If their spent increase, it could be positive affect and if the spent decrease that could be negative. Our null hypothesis could be there's no change in customers' purchasing. The alternative hypthothesis could be there's increase and decrease in their spent. Every segments, we shall make A/B Test instead of use all customers without segment.At last, we shall use statistical inference to see whether our change is significant and could compare the result between different groups</p>
 
 </div>
 </div>
