@@ -164,7 +164,7 @@ class LearningAgent(Agent):
         if self.learning:
             QMax = self.get_maxQ(state)
             alpha_td = self.alpha * (reward + QMax - self.Q[state][action])
-            self.Q[state][action] = self.Q[state][action] + alpha_td
+            self.Q[state][action] += alpha_td
 
         return
 
