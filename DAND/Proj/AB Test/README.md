@@ -2,6 +2,7 @@
 ## Author: Rocha
 ## Date: April 2017
 ### Experiment Design
+---- 
 #### Metric Choice
 **Number of cookies:**  Invariant Metrics. This is our unit of diversion, in the two groups, we want to see them even distributed. 
 **Number of user-ids:** Not chosen. This is neither Invariant metrics nor evaluation metrics. User-id only can be tracked when students enrolled, so we can not track those who don't enrolled. 
@@ -30,6 +31,7 @@ And my number of pageview is 4,741,212. Because of this number is so large, so w
 From above, our sample size is 685,325. Because divert the traffic doesn’t have moral effect so we can divert 100% of the traffic to our experiment group. In this situation, I can't see any risk in this experiment. When students choose that they don’t have more than 5 hours per week to study, they will be oriented to free courses. They could enroll in free trial whenever they feel like to do so. There is nothing changed related database, so we don’t need to worry about missing any important data. Also, no personal privacy information will be required in the experiment, therefore there is no ethical consideration. It will be ok to run on all traffic if this is the only experiment Udacity wants to run, especially given that the experiment will take a non-trivial amount of time even on all traffic. Our daily number of pageviews per cookie is 40,000. So we collect our data just need 18 days.
 
 #### Experiment Analysis
+---- 
 ##### Sanity Checks
 
 In the sanity check, we should check our invariant, namely number of cookies and number of click on “Start free trial”. In our check,  equals 0.05
@@ -38,6 +40,7 @@ In the sanity check, we should check our invariant, namely number of cookies and
 **Click-through-probability:** [0.0812, 0.0830] and our observation is 0.0821.Pass.
 
 #### Result Analysis
+---- 
 ##### *Effect Size Tests*
 
 **Gross Conversion:**  [-0.0291, -0.0120]. Statistical significant. Practical significant.
@@ -55,11 +58,11 @@ State whether you used the Bonferroni correction, and explain why or why not. If
 I don’t use the Bonferroni correction because if we use that we will need more time to collect our sample. In this case, two metrics are measured. Because they are highly related, it is inappropriate to advocate launching, so Bonferroni is overly conservative. Even though Bonferroni didn't affect the statistical significance results here, it's important not to use the Bonferroni correction unless you need it, since otherwise you're going to miss out on launching a lot of experiments. There’s discrepancy between hypothesis tests and sign tests in Gross Conversion rate. Maybe because the time affect, like it concluding holiday traffic.
 
 ## Recommendation
-
+---- 
 So in the end, we can conclude that our test would reduce the click on “free start screenshot”, however it won’t show a significant increase in the net conversion. So we didn’t reach our goal, so we shouldn’t launch the experiment.
 
 ## Follow-Up Experiment
-
+---- 
 In the future work, if we wanted to reduce the number of frustrated students who cancel early in the course, we can do things such as: 1. Have more specific instruction before they start the course. 2. Enhance the free trial courses, the same as improve the course’s quality. 3. Have stricter and clarified prerequisite to filter the students. We can use user-id as our unit of diversion. We could measure the same net conversion rate, use similar invariant like number of pagesviews, number of clicks on “free start trial.”
 
 As for the last method, having stricter and clarified prerequisite:
